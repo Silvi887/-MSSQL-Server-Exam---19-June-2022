@@ -79,17 +79,10 @@ VALUES
 ('Tuatara',	'2021-06-30',	2,	4)
 
 ---3
-SELECT * FROM Owners 
-WHERE [Name]='Kaloqn Stoqnov' --Id 4
-
-SELECT * FROM Animals WHERE OwnerId IS NULL
-
-BEGIN TRAN
 UPDATE Animals
 SET OwnerId=(SELECT Id FROM Owners 
 WHERE [Name]='Kaloqn Stoqnov' )
 WHERE OwnerId IS NULL
-ROLLBACK TRAN
 
 
 ---4
